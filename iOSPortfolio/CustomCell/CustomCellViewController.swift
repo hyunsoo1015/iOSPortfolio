@@ -1,18 +1,20 @@
 import UIKit
 
 class CustomCellViewController: UITableViewController {
+    var appDelegate: AppDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.title = "사용자 정의 셀"
+        
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        //AppDelegate 클래스의 인스턴스에 대한 참조를 생성
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        return appDelegate.images1.count
+        return appDelegate!.images1.count
     }
     
     //셀을 생성해주는 메소드
@@ -28,11 +30,14 @@ class CustomCellViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? MyCustomCell
         
         //데이터 출력
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        
-        cell?.imgView.image = UIImage(named: appDelegate.images1[indexPath.row])
+        cell?.imgView.image = UIImage(named: appDelegate!.images1[indexPath.row])
         
         return cell!
+    }
+    
+    //셀의 높이를 설정하는 메소드
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
     }
 
 }

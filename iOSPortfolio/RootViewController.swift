@@ -14,6 +14,9 @@ class RootViewController: UITableViewController {
         titles.append("사용자 정의 셀")
         contents.append("셀을 원하는 모양으로 만들어서 출력")
         
+        titles.append("테이블 뷰 편집")
+        contents.append("데이터를 삽입하고 삭제 그리고 이동")
+        
     }
 
     //섹션의 개수를 설정하는 메소드
@@ -51,7 +54,9 @@ class RootViewController: UITableViewController {
         if indexPath.row == 0 {
             let customCellViewController = self.storyboard?.instantiateViewController(withIdentifier: "CustomCellViewController") as! CustomCellViewController
             self.navigationController?.pushViewController(customCellViewController, animated: true)
+        } else if indexPath.row == 1 {
+            let editTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditTableViewController") as! EditTableViewController
+            self.navigationController?.pushViewController(editTableViewController, animated: true)
         }
     }
-
 }

@@ -17,6 +17,9 @@ class RootViewController: UITableViewController {
         titles.append("테이블 뷰 편집")
         contents.append("데이터를 삽입하고 삭제 그리고 이동")
         
+        titles.append("그룹 별 분류")
+        contents.append("한글 자음 별 분류 및 검색과 인덱싱")
+        
     }
 
     //섹션의 개수를 설정하는 메소드
@@ -57,6 +60,9 @@ class RootViewController: UITableViewController {
         } else if indexPath.row == 1 {
             let editTableViewController = self.storyboard?.instantiateViewController(withIdentifier: "EditTableViewController") as! EditTableViewController
             self.navigationController?.pushViewController(editTableViewController, animated: true)
+        } else if indexPath.row == 2 {
+            let classificationViewController = self.storyboard?.instantiateViewController(withIdentifier: "ClassificationViewController") as! ClassificationViewController
+            self.navigationController?.pushViewController(classificationViewController, animated: true)
         }
     }
 }

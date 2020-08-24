@@ -23,6 +23,9 @@ class RootViewController: UITableViewController {
         titles.append("하위 데이터 출력")
         contents.append("테이블 뷰의 업데이트도 수행")
         
+        titles.append("컬렉션 뷰 사용")
+        contents.append("컬렉션 뷰의 출력과 선택 이벤트")
+        
     }
 
     //섹션의 개수를 설정하는 메소드
@@ -69,6 +72,9 @@ class RootViewController: UITableViewController {
         } else if indexPath.row == 3 {
             let attractionMainViewController = self.storyboard?.instantiateViewController(withIdentifier: "AttractionMainViewController") as! AttractionMainViewController
             self.navigationController?.pushViewController(attractionMainViewController, animated: true)
+        } else if indexPath.row == 4 {
+            let carCollectionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CarCollectionViewController") as! CarCollectionViewController
+            self.navigationController?.pushViewController(carCollectionViewController, animated: true)
         }
     }
 }

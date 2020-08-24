@@ -20,6 +20,9 @@ class RootViewController: UITableViewController {
         titles.append("그룹 별 분류")
         contents.append("한글 자음 별 분류 및 검색과 인덱싱")
         
+        titles.append("하위 데이터 출력")
+        contents.append("테이블 뷰의 업데이트도 수행")
+        
     }
 
     //섹션의 개수를 설정하는 메소드
@@ -63,6 +66,9 @@ class RootViewController: UITableViewController {
         } else if indexPath.row == 2 {
             let classificationViewController = self.storyboard?.instantiateViewController(withIdentifier: "ClassificationViewController") as! ClassificationViewController
             self.navigationController?.pushViewController(classificationViewController, animated: true)
+        } else if indexPath.row == 3 {
+            let attractionMainViewController = self.storyboard?.instantiateViewController(withIdentifier: "AttractionMainViewController") as! AttractionMainViewController
+            self.navigationController?.pushViewController(attractionMainViewController, animated: true)
         }
     }
 }

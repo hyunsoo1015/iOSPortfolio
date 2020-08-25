@@ -26,6 +26,12 @@ class RootViewController: UITableViewController {
         titles.append("컬렉션 뷰 사용")
         contents.append("컬렉션 뷰의 출력과 선택 이벤트")
         
+        titles.append("소켓 프로그래밍")
+        contents.append("TCP 소켓 프로그래밍")
+        
+        titles.append("동기적 다운로드")
+        contents.append("텍스트와 이미지를 동기적으로 다운로드 받아서 출력")
+        
     }
 
     //섹션의 개수를 설정하는 메소드
@@ -75,6 +81,12 @@ class RootViewController: UITableViewController {
         } else if indexPath.row == 4 {
             let carCollectionViewController = self.storyboard?.instantiateViewController(withIdentifier: "CarCollectionViewController") as! CarCollectionViewController
             self.navigationController?.pushViewController(carCollectionViewController, animated: true)
+        } else if indexPath.row == 5 {
+            let socketClientViewController = self.storyboard?.instantiateViewController(withIdentifier: "SocketClientViewController") as! SocketClientViewController
+            self.navigationController?.pushViewController(socketClientViewController, animated: true)
+        } else if indexPath.row == 6 {
+            let syncDownloadViewController = self.storyboard?.instantiateViewController(withIdentifier: "SyncDownloadViewController") as! SyncDownloadViewController
+            self.navigationController?.pushViewController(syncDownloadViewController, animated: true)
         }
     }
 }
